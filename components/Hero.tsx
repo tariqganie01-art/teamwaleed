@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
@@ -88,29 +90,23 @@ export default function Hero() {
         <div
           style={{
             flex: 1,
-            minWidth: "300px",
             display: "flex",
             justifyContent: "center",
+            minWidth: "320px",
           }}
         >
-          <div
+          <Image
+            src="/images/waleed-hero.png"
+            alt="Waleed"
+            width={420}
+            height={560}
             style={{
-              width: "350px",
-              height: "420px",
-              borderRadius: "20px",
-              background: "rgba(255,255,255,0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "24px",
-              textAlign: "center",
-              padding: "20px",
+              borderRadius: "24px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
+              maxWidth: "100%",
+              height: "auto",
             }}
-          >
-            Waleed's Hero Photo
-            <br />
-            (Coming Soon)
-          </div>
+          />
         </div>
       </div>
     </section>

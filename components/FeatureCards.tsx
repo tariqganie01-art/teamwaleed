@@ -1,78 +1,96 @@
 export default function FeatureCards() {
-  const cards = [
-    {
-      icon: "🎓",
-      title: "Education & Excellence",
-      text: "Celebrating Waleed's learning journey and supporting inclusive education for every child.",
-    },
-    {
-      icon: "🧬",
-      title: "Understanding MPS IV",
-      text: "Trusted, easy to understand information about Morquio Syndrome for families and professionals.",
-    },
-    {
-      icon: "❤️",
-      title: "Hope & Community",
-      text: "Connecting families, sharing experiences, and building hope through awareness and support.",
-    },
-  ];
-
   return (
     <section
       style={{
-        padding: "80px 20px",
         background: "#f8fafc",
+        padding: "90px 20px",
       }}
     >
       <div
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "30px",
+          textAlign: "center",
         }}
       >
-        {cards.map((card) => (
-          <div
-            key={card.title}
-            style={{
-              background: "white",
-              borderRadius: "16px",
-              padding: "35px",
-              boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-              textAlign: "center",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "52px",
-                marginBottom: "20px",
-              }}
-            >
-              {card.icon}
-            </div>
+        <h2
+          style={{
+            fontSize: "42px",
+            color: "#0B5ED7",
+            marginBottom: "15px",
+          }}
+        >
+          Why Team Waleed?
+        </h2>
 
-            <h3
-              style={{
-                color: "#0b5ed7",
-                marginBottom: "16px",
-              }}
-            >
-              {card.title}
-            </h3>
+        <p
+          style={{
+            color: "#64748b",
+            fontSize: "20px",
+            maxWidth: "760px",
+            margin: "0 auto 70px",
+            lineHeight: 1.8,
+          }}
+        >
+          Team Waleed is more than a website. It is a growing movement dedicated
+          to education, awareness, research and hope for children living with
+          Morquio Syndrome.
+        </p>
 
-            <p
-              style={{
-                lineHeight: "1.8",
-                color: "#475569",
-              }}
-            >
-              {card.text}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+            gap: "35px",
+          }}
+        >
+          <div style={cardStyle}>
+            <div style={iconStyle}>🎓</div>
+
+            <h3>Education</h3>
+
+            <p>
+              Supporting inclusive education and helping every child achieve
+              their highest potential.
             </p>
           </div>
-        ))}
+
+          <div style={cardStyle}>
+            <div style={iconStyle}>🧬</div>
+
+            <h3>Morquio Syndrome</h3>
+
+            <p>
+              Reliable medical information explained in a way families can
+              understand.
+            </p>
+          </div>
+
+          <div style={cardStyle}>
+            <div style={iconStyle}>❤️</div>
+
+            <h3>Family Support</h3>
+
+            <p>
+              Sharing experiences, practical guidance and encouragement for
+              families around the world.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+
+const cardStyle = {
+  background: "white",
+  padding: "40px",
+  borderRadius: "18px",
+  boxShadow: "0 12px 35px rgba(0,0,0,.08)",
+  textAlign: "center" as const,
+};
+
+const iconStyle = {
+  fontSize: "56px",
+  marginBottom: "20px",
+};

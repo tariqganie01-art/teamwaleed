@@ -1,56 +1,127 @@
+import Image from "next/image";
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "#334155",
+  fontWeight: 600,
+  fontSize: "16px",
+};
+
 export default function Header() {
   return (
     <header
       style={{
         position: "sticky",
         top: 0,
-        background: "#ffffff",
-        borderBottom: "1px solid #e5e7eb",
-        padding: "18px 40px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
         zIndex: 1000,
+        background: "rgba(255,255,255,0.97)",
+        backdropFilter: "blur(10px)",
+        borderBottom: "1px solid #e5e7eb",
       }}
     >
-      <h2
+      <div
         style={{
-          margin: 0,
-          color: "#0b5ed7",
-          fontSize: "28px",
-        }}
-      >
-        Team Waleed
-      </h2>
-
-      <nav
-        style={{
+          maxWidth: "1250px",
+          margin: "0 auto",
+          padding: "16px 24px",
           display: "flex",
-          gap: "28px",
+          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
-        <a href="#">Home</a>
-        <a href="#">Meet Waleed</a>
-        <a href="#">Education</a>
-        <a href="#">MPS IV</a>
-        <a href="#">Research</a>
-        <a href="#">Resources</a>
-        <a href="#">Contact</a>
-
-        <button
+        <a
+          href="/"
           style={{
-            background: "#0b5ed7",
-            color: "white",
-            border: "none",
-            padding: "10px 22px",
-            borderRadius: "8px",
-            cursor: "pointer",
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
           }}
         >
-          Donate
-        </button>
-      </nav>
+          <Image
+            src="/images/teamwaleed-logo.png"
+            alt="Team Waleed Logo"
+            width={70}
+            height={70}
+            priority
+          />
+
+          <div>
+            <div
+              style={{
+                color: "#0B5ED7",
+                fontSize: "30px",
+                fontWeight: "bold",
+                lineHeight: 1,
+              }}
+            >
+              TEAM WALEED
+            </div>
+
+            <div
+              style={{
+                color: "#14b8a6",
+                fontSize: "13px",
+                marginTop: "6px",
+                letterSpacing: "1px",
+              }}
+            >
+              HOPE • LEARNING • AWARENESS
+            </div>
+          </div>
+        </a>
+
+        <nav
+          style={{
+            display: "flex",
+            gap: "26px",
+            alignItems: "center",
+          }}
+        >
+          <a href="/" style={linkStyle}>
+            Home
+          </a>
+
+          <a href="/meet-waleed" style={linkStyle}>
+            Meet Waleed
+          </a>
+
+          <a href="/education" style={linkStyle}>
+            Education
+          </a>
+
+          <a href="/mps" style={linkStyle}>
+            MPS IV
+          </a>
+
+          <a href="/research" style={linkStyle}>
+            Research
+          </a>
+
+          <a href="/resources" style={linkStyle}>
+            Resources
+          </a>
+
+          <a href="/contact" style={linkStyle}>
+            Contact
+          </a>
+
+          <a
+            href="/donate"
+            style={{
+              background: "#0B5ED7",
+              color: "white",
+              padding: "12px 22px",
+              borderRadius: "10px",
+              textDecoration: "none",
+              fontWeight: "bold",
+              boxShadow: "0 6px 18px rgba(11,94,215,.25)",
+            }}
+          >
+            ❤️ Donate
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
