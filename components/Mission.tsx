@@ -1,137 +1,82 @@
+import Link from "next/link";
+
+const missionAreas = [
+  {
+    title: "Awareness",
+    description:
+      "We share clear, reliable information about rare diseases so families, schools and communities can understand them better.",
+    icon: "01",
+  },
+  {
+    title: "Family Support",
+    description:
+      "We aim to connect families with useful resources, guidance and a stronger support network.",
+    icon: "02",
+  },
+  {
+    title: "Medical Education",
+    description:
+      "We encourage learning for healthcare professionals who want to understand, identify and manage rare diseases.",
+    icon: "03",
+  },
+  {
+    title: "Research Collaboration",
+    description:
+      "We promote responsible research, clinical learning and collaboration that can improve rare disease care.",
+    icon: "04",
+  },
+];
+
 export default function Mission() {
   return (
-    <section
-      style={{
-        background: "#ffffff",
-        padding: "100px 20px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "60px",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <p
-            style={{
-              color: "#14B8A6",
-              fontWeight: "bold",
-              letterSpacing: "2px",
-              marginBottom: "15px",
-            }}
-          >
-            OUR MISSION
-          </p>
+    <section className="bg-white py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.6fr] lg:items-start">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-blue-700">
+              Our mission
+            </p>
 
-          <h2
-            style={{
-              fontSize: "46px",
-              color: "#0B5ED7",
-              marginBottom: "25px",
-            }}
-          >
-            Building Hope Through Knowledge
-          </h2>
+            <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+              Turning awareness into meaningful action.
+            </h2>
 
-          <p
-            style={{
-              fontSize: "20px",
-              lineHeight: 1.9,
-              color: "#555",
-            }}
-          >
-            Team Waleed exists to improve awareness of Morquio Syndrome,
-            encourage inclusive education, empower families with trusted
-            information, and inspire children to pursue their dreams despite
-            medical challenges.
-          </p>
-        </div>
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Team Waleed Foundation works to improve understanding, support
+              families, strengthen medical education and encourage research for
+              rare diseases.
+            </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "25px",
-          }}
-        >
-          <Card
-            icon="🎓"
-            title="Education"
-            text="Helping schools create inclusive learning environments."
-          />
+            <Link
+              href="/about"
+              className="mt-8 inline-flex rounded-full bg-blue-700 px-6 py-3 font-semibold text-white transition hover:bg-blue-800"
+            >
+              Learn about the foundation
+            </Link>
+          </div>
 
-          <Card
-            icon="🧬"
-            title="Medical Knowledge"
-            text="Reliable information reviewed from trusted sources."
-          />
+          <div className="grid gap-6 sm:grid-cols-2">
+            {missionAreas.map((item) => (
+              <article
+                key={item.title}
+                className="group rounded-3xl border border-slate-200 bg-slate-50 p-7 transition hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-700 text-sm font-bold text-white">
+                  {item.icon}
+                </div>
 
-          <Card
-            icon="❤️"
-            title="Family Support"
-            text="Sharing experiences, guidance and encouragement."
-          />
+                <h3 className="mt-6 text-2xl font-bold text-slate-900">
+                  {item.title}
+                </h3>
 
-          <Card
-            icon="🌍"
-            title="Global Awareness"
-            text="Connecting people across countries through education."
-          />
+                <p className="mt-4 leading-7 text-slate-600">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-}
-
-function Card({
-  icon,
-  title,
-  text,
-}: {
-  icon: string;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div
-      style={{
-        background: "#f8fafc",
-        padding: "30px",
-        borderRadius: "18px",
-        boxShadow: "0 10px 25px rgba(0,0,0,.08)",
-      }}
-    >
-      <div
-        style={{
-          fontSize: "42px",
-          marginBottom: "15px",
-        }}
-      >
-        {icon}
-      </div>
-
-      <h3
-        style={{
-          color: "#0B5ED7",
-          marginBottom: "15px",
-        }}
-      >
-        {title}
-      </h3>
-
-      <p
-        style={{
-          color: "#555",
-          lineHeight: 1.7,
-        }}
-      >
-        {text}
-      </p>
-    </div>
-  );
-}
+} 
