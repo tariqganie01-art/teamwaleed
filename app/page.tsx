@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Impact from "@/components/impact";
+import Impact from "@/components/Impact";
 import FeatureCards from "@/components/FeatureCards";
 import Mission from "@/components/Mission";
 import FeaturedResources from "@/components/FeaturedResources";
