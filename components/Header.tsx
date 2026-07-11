@@ -1,127 +1,124 @@
-import Image from "next/image";
+"use client";
 
-const linkStyle = {
-  textDecoration: "none",
-  color: "#334155",
-  fontWeight: 600,
-  fontSize: "16px",
-};
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Meet Waleed", href: "/meet-waleed" },
+  { name: "MPS IV", href: "/mps-iv" },
+  { name: "Resources", href: "/resources" },
+  { name: "Research", href: "/research" },
+  { name: "Contact", href: "/contact" },
+];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-        background: "rgba(255,255,255,0.97)",
-        backdropFilter: "blur(10px)",
-        borderBottom: "1px solid #e5e7eb",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1250px",
-          margin: "0 auto",
-          padding: "16px 24px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <a
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <Link
           href="/"
-          style={{
-            textDecoration: "none",
-            display: "flex",
-            alignItems: "center",
-            gap: "14px",
-          }}
+          className="flex min-w-0 items-center gap-3"
+          onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/images/teamwaleed-logo.png"
-            alt="Team Waleed Logo"
-            width={70}
-            height={70}
+            src="/logo.png"
+            alt="Team Waleed Foundation logo"
+            width={60}
+            height={60}
             priority
+            className="h-12 w-12 rounded-full object-contain sm:h-14 sm:w-14"
           />
 
-          <div>
-            <div
-              style={{
-                color: "#0B5ED7",
-                fontSize: "30px",
-                fontWeight: "bold",
-                lineHeight: 1,
-              }}
-            >
-              TEAM WALEED
-            </div>
+          <div className="min-w-0">
+            <p className="truncate text-base font-bold text-slate-900 sm:text-lg">
+              Team Waleed Foundation
+            </p>
 
-            <div
-              style={{
-                color: "#14b8a6",
-                fontSize: "13px",
-                marginTop: "6px",
-                letterSpacing: "1px",
-              }}
-            >
-              HOPE • LEARNING • AWARENESS
-            </div>
+            <p className="truncate text-xs font-medium text-blue-700 sm:text-sm">
+              Together for every rare life
+            </p>
           </div>
-        </a>
+        </Link>
 
-        <nav
-          style={{
-            display: "flex",
-            gap: "26px",
-            alignItems: "center",
-          }}
-        >
-          <a href="/" style={linkStyle}>
-            Home
-          </a>
+        <nav className="hidden items-center gap-5 lg:flex">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm font-medium text-slate-700 transition hover:text-blue-700"
+            >
+              {item.name}
+            </Link>
+          ))}
 
-          <a href="/meet-waleed" style={linkStyle}>
-            Meet Waleed
-          </a>
-
-          <a href="/education" style={linkStyle}>
-            Education
-          </a>
-
-          <a href="/mps" style={linkStyle}>
-            MPS IV
-          </a>
-
-          <a href="/research" style={linkStyle}>
-            Research
-          </a>
-
-          <a href="/resources" style={linkStyle}>
-            Resources
-          </a>
-
-          <a href="/contact" style={linkStyle}>
-            Contact
-          </a>
-
-          <a
-            href="/donate"
-            style={{
-              background: "#0B5ED7",
-              color: "white",
-              padding: "12px 22px",
-              borderRadius: "10px",
-              textDecoration: "none",
-              fontWeight: "bold",
-              boxShadow: "0 6px 18px rgba(11,94,215,.25)",
-            }}
+          <Link
+            href="/contact"
+            className="rounded-full bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-800"
           >
-            ❤️ Donate
-          </a>
+            Support Us
+          </Link>
         </nav>
+
+        <button
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-300 text-slate-700 lg:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span className="sr-only">Open menu</span>
+
+          <div className="space-y-1.5">
+            <span
+              className={`block h-0.5 w-6 bg-current transition ${
+                menuOpen ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
+
+            <span
+              className={`block h-0.5 w-6 bg-current transition ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            />
+
+            <span
+              className={`block h-0.5 w-6 bg-current transition ${
+                menuOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
+          </div>
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="border-t border-slate-200 bg-white lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-4 sm:px-6">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-3 rounded-lg bg-blue-700 px-4 py-3 text-center font-semibold text-white hover:bg-blue-800"
+            >
+              Support Us
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
