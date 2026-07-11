@@ -26,7 +26,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/logo.png"
+            src="/team-waleed-logo.png"
             alt="Team Waleed Foundation logo"
             width={60}
             height={60}
