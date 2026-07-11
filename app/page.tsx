@@ -8,7 +8,9 @@ import About from "@/components/About";
 import Education from "@/components/Education";
 import MPSSection from "@/components/MPSSection";
 import Footer from "@/components/Footer";
-import WaleedStory from "@/components/WaleedStory.tsx";
+import WaleedStory from "@/components/WaleedStory";
+import LatestNews from "@/components/LatestNews";
+
 
 export default function Home() {
   return (
@@ -25,6 +27,10 @@ export default function Home() {
       <About />
       <Education />
       <MPSSection />
+      <Education />
+      <MPSSection />
+      <LatestNews />
+<Footer />
       <Footer />
     </>
   );
