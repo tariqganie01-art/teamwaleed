@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Education from "@/components/Education";
 import MPSSection from "@/components/MPSSection";
 import Footer from "@/components/Footer";
+import WaleedStory from "@/components/WaleedStory.tsx";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
       <Impact />
       <FeatureCards />
       <Mission />
+      <Mission />
+      <WaleedStory />
+      <FeaturedResources />
       <FeaturedResources />
       <About />
       <Education />
