@@ -30,7 +30,6 @@ export default function Home() {
       <Education />
       <MPSSection />
       <LatestNews />
-<Footer />
       <Footer />
     </>
   );
