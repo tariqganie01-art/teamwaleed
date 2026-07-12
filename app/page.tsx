@@ -10,7 +10,7 @@ import Education from "@/components/Education";
 import MPSSection from "@/components/MPSSection";
 import Footer from "@/components/Footer";
 import RareDiseaseKnowledge from "@/components/RareDiseaseKnowledge";
-
+import HealthcareCollaboration from "@/components/HealthcareCollaboration";
 export default function Home() {
   return (
     <>
@@ -21,6 +21,7 @@ export default function Home() {
       <Mission />
       <WaleedStory />
       <RareDiseaseKnowledge />
+      <HealthcareCollaboration />
       <FeaturedResources />
       <About />
       <Education />
