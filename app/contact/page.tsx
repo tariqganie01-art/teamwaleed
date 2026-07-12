@@ -198,11 +198,6 @@ export default function ContactPage() {
                         <FaEnvelope aria-hidden="true" />
                       </a>
                     </div>
-
-                    <p className="mt-6 text-sm leading-6 text-blue-200">
-                      Instagram and LinkedIn profiles will be added when
-                      available.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -217,7 +212,43 @@ export default function ContactPage() {
                   understand your request.
                 </p>
 
-                <form className="mt-8 space-y-6">
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  className="mt-8 space-y-6"
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="YOUR_WEB3FORMS_ACCESS_KEY"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="New enquiry from Team Waleed Foundation website"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="from_name"
+                    value="Team Waleed Foundation Website"
+                  />
+
+                  <input
+                    type="hidden"
+                    name="redirect"
+                    value="https://teamwaleed.org/contact-success"
+                  />
+
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <div>
                     <label
                       htmlFor="fullName"
@@ -228,7 +259,7 @@ export default function ContactPage() {
 
                     <input
                       id="fullName"
-                      name="fullName"
+                      name="name"
                       type="text"
                       autoComplete="name"
                       required
@@ -281,7 +312,7 @@ export default function ContactPage() {
 
                     <select
                       id="enquiryType"
-                      name="enquiryType"
+                      name="enquiry_type"
                       defaultValue="General enquiry"
                       className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     >
@@ -296,15 +327,15 @@ export default function ContactPage() {
 
                   <div>
                     <label
-                      htmlFor="subject"
+                      htmlFor="enquirySubject"
                       className="block font-semibold text-slate-700"
                     >
                       Subject
                     </label>
 
                     <input
-                      id="subject"
-                      name="subject"
+                      id="enquirySubject"
+                      name="enquiry_subject"
                       type="text"
                       required
                       className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
@@ -336,8 +367,8 @@ export default function ContactPage() {
                   </button>
 
                   <p className="text-sm leading-6 text-slate-500">
-                    The form design is complete. Email delivery still needs to
-                    be connected before submitted messages can be received.
+                    Your message will be sent securely to Team Waleed
+                    Foundation.
                   </p>
                 </form>
               </div>
