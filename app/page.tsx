@@ -9,6 +9,7 @@ import About from "@/components/About";
 import Education from "@/components/Education";
 import MPSSection from "@/components/MPSSection";
 import Footer from "@/components/Footer";
+import RareDiseaseKnowledge from "@/components/RareDiseaseKnowledge";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <FeatureCards />
       <Mission />
       <WaleedStory />
+      <RareDiseaseKnowledge />
       <FeaturedResources />
       <About />
       <Education />
