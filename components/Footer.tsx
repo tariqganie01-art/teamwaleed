@@ -1,150 +1,170 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const quickLinks = [
+const foundationLinks = [
   { name: "About Us", href: "/about" },
   { name: "Meet Waleed", href: "/meet-waleed" },
-  { name: "MPS IV", href: "/mps-iv" },
-  { name: "Resources", href: "/resources" },
+  { name: "Our Research", href: "/research" },
+  { name: "Latest News", href: "/news" },
 ];
 
-const foundationLinks = [
-  { name: "Research Hub", href: "/research" },
-  { name: "News and Updates", href: "/news" },
-  { name: "Support Us", href: "/support" },
+const resourceLinks = [
+  { name: "Understanding MPS IV", href: "/mps-iv" },
+  { name: "Rare Disease Resources", href: "/resources" },
+  { name: "Medical Education", href: "/education" },
+  { name: "Support the Mission", href: "/support" },
+];
+
+const actionLinks = [
   { name: "Contact Us", href: "/contact" },
+  { name: "Donate", href: "/donate" },
+  { name: "Volunteer", href: "/contact" },
+  { name: "Healthcare Collaboration", href: "/contact" },
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-slate-950 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/team-waleed-logo.png"
-                alt="Team Waleed Foundation logo"
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-contain"
-              />
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
+          <div className="max-w-md">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-4"
+              aria-label="Team Waleed Foundation home"
+            >
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2">
+                <Image
+                  src="/images/teamwaleed-logo.png"
+                  alt="Team Waleed Foundation logo"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-contain"
+                />
+              </div>
 
               <div>
-                <p className="font-bold">Team Waleed Foundation</p>
-                <p className="text-sm text-blue-300">
+                <p className="text-xl font-bold">Team Waleed Foundation</p>
+
+                <p className="mt-1 text-sm font-medium text-blue-300">
                   Together for every rare life
                 </p>
               </div>
             </Link>
 
-            <p className="mt-6 max-w-sm leading-7 text-slate-300">
-              Supporting rare disease awareness, family resources, medical
-              education and responsible research collaboration.
+            <p className="mt-6 leading-7 text-slate-300">
+              Supporting rare disease awareness, education, research,
+              healthcare collaboration, and families seeking reliable
+              information and hope.
             </p>
-          </div>
 
-          <div>
-            <h2 className="text-lg font-bold">Quick Links</h2>
-
-            <div className="mt-5 flex flex-col gap-3">
-              {quickLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-300 transition hover:text-white"
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="mt-7">
+              <Link
+                href="/donate"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-blue-600 px-7 py-3 font-semibold text-white transition hover:bg-blue-500"
+              >
+                Support Our Mission
+              </Link>
             </div>
           </div>
 
-          <div>
-            <h2 className="text-lg font-bold">Foundation</h2>
+          <div className="grid gap-10 sm:grid-cols-3">
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">
+                Foundation
+              </h2>
 
-            <div className="mt-5 flex flex-col gap-3">
-              {foundationLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-300 transition hover:text-white"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-bold">Contact</h2>
-
-            <div className="mt-5 space-y-4 text-slate-300">
-              <a
-                href="tel:+919419040309"
-                className="block transition hover:text-white"
-              >
-                +91 94190 40309
-              </a>
-
-              <a
-                href="mailto:contact@teamwaleed.org"
-                className="block break-all transition hover:text-white"
-              >
-                contact@teamwaleed.org
-              </a>
-
-              <a
-                href="https://wa.me/919419040309"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block transition hover:text-white"
-              >
-                WhatsApp
-              </a>
+              <ul className="mt-5 space-y-3">
+                {foundationLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-slate-300 transition hover:text-white"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="https://www.facebook.com/teamwaleed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-slate-950"
-              >
-                Facebook
-              </a>
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">
+                Resources
+              </h2>
 
-              <a
-                href="https://www.youtube.com/@waleed-2019"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-slate-950"
-              >
-                YouTube
-              </a>
+              <ul className="mt-5 space-y-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-slate-300 transition hover:text-white"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">
+                Get Involved
+              </h2>
+
+              <ul className="mt-5 space-y-3">
+                {actionLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-slate-300 transition hover:text-white"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} Team Waleed Foundation. All rights
-            reserved.
-          </p>
+        <div className="mt-14 border-t border-slate-800 pt-8">
+          <div className="flex flex-col gap-5 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+            <p>
+              © {currentYear} Team Waleed Foundation. All rights reserved.
+            </p>
 
-          <div className="flex flex-wrap gap-5">
-            <Link href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
+              <Link
+                href="/privacy"
+                className="transition hover:text-white"
+              >
+                Privacy Policy
+              </Link>
 
-            <Link href="/terms" className="hover:text-white">
-              Terms of Use
-            </Link>
+              <Link
+                href="/terms"
+                className="transition hover:text-white"
+              >
+                Terms of Use
+              </Link>
 
-            <Link href="/contact" className="hover:text-white">
-              Contact
-            </Link>
+              <Link
+                href="/contact"
+                className="transition hover:text-white"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
+
+          <p className="mt-6 max-w-4xl text-xs leading-6 text-slate-500">
+            Information provided on this website is for awareness and
+            educational purposes. It does not replace professional medical
+            advice, diagnosis, or treatment.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,34 +1,35 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Impact from "@/components/Impact";
-import FeatureCards from "@/components/FeatureCards";
-import Mission from "@/components/Mission";
-import WaleedStory from "@/components/WaleedStory";
-import FeaturedResources from "@/components/FeaturedResources";
 import About from "@/components/About";
 import Education from "@/components/Education";
-import MPSSection from "@/components/MPSSection";
-import Footer from "@/components/Footer";
-import RareDiseaseKnowledge from "@/components/RareDiseaseKnowledge";
-import HealthcareCollaboration from "@/components/HealthcareCollaboration";
+import FeatureCards from "@/components/FeatureCards";
+import FeaturedResources from "@/components/FeaturedResources";
 import FeaturedVideos from "@/components/FeaturedVideos";
-export default function Home() {
+import HealthcareCollaboration from "@/components/HealthcareCollaboration";
+import Hero from "@/components/Hero";
+import Impact from "@/components/Impact";
+import LatestNews from "@/components/LatestNews";
+import Mission from "@/components/Mission";
+import MPSSection from "@/components/MPSSection";
+import RareDiseaseKnowledge from "@/components/RareDiseaseKnowledge";
+import Timeline from "@/components/Timeline";
+import WaleedStory from "@/components/WaleedStory";
+
+export default function HomePage() {
   return (
-    <>
-      <Header />
+    <main>
       <Hero />
       <Impact />
-      <FeatureCards />
       <Mission />
       <WaleedStory />
+      <MPSSection />
       <RareDiseaseKnowledge />
       <HealthcareCollaboration />
-      <FeaturedResources />
-      <About />
       <Education />
-      <MPSSection />
+      <FeaturedResources />
       <FeaturedVideos />
-      <Footer />
-    </>
+      <LatestNews />
+      <FeatureCards />
+      <Timeline />
+      <About />
+    </main>
   );
 }
