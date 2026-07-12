@@ -1,80 +1,76 @@
-import Link from "next/link";
-
-const stats = [
+const impactItems = [
   {
-    number: "1",
-    title: "Mission",
+    value: "1",
+    title: "Shared Mission",
     description:
-      "Dedicated to improving awareness, education and support for rare diseases.",
+      "Building awareness, knowledge, dignity, and support around rare diseases.",
   },
   {
-    number: "100%",
+    value: "100%",
     title: "Commitment",
     description:
-      "Focused on helping families, healthcare professionals and researchers.",
+      "Focused on responsible education, collaboration, and family support.",
   },
   {
-    number: "24/7",
-    title: "Knowledge Access",
-    description:
-      "Providing trusted information through Team Waleed Foundation.",
-  },
-  {
-    number: "∞",
+    value: "∞",
     title: "Hope",
     description:
-      "Working toward a future where every rare life receives understanding and support.",
+      "Every rare life deserves recognition, care, opportunity, and respect.",
+  },
+  {
+    value: "1",
+    title: "Young Inspiration",
+    description:
+      "Waleed’s journey continues to inspire a larger movement for rare lives.",
   },
 ];
 
 export default function Impact() {
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Our Impact
-          </span>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
+            Our Purpose
+          </p>
 
-          <h2 className="mt-6 text-4xl font-bold text-slate-900 sm:text-5xl">
-            Building awareness. Inspiring hope. Creating change.
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            A growing mission inspired by one remarkable life
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Team Waleed Foundation is building a trusted platform where families,
-            healthcare professionals and researchers can work together to improve
-            rare disease awareness and education.
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Team Waleed Foundation aims to create practical impact through
+            awareness, education, healthcare collaboration, research support,
+            and reliable information for rare disease families.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {stats.map((item) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {impactItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-3xl bg-white p-8 text-center shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
+              className="group rounded-3xl border border-slate-200 bg-slate-50 p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white hover:shadow-xl"
             >
-              <div className="text-5xl font-bold text-blue-700">
-                {item.number}
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-700 text-2xl font-bold text-white shadow-lg shadow-blue-700/20">
+                {item.value}
               </div>
 
-              <h3 className="mt-5 text-2xl font-bold text-slate-900">
+              <h3 className="mt-6 text-xl font-bold text-slate-950">
                 {item.title}
               </h3>
 
-              <p className="mt-4 leading-7 text-slate-600">
+              <p className="mt-3 leading-7 text-slate-600">
                 {item.description}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <Link
-            href="/about"
-            className="inline-flex rounded-full bg-blue-700 px-8 py-4 font-semibold text-white transition hover:bg-blue-800"
-          >
-            Learn More About Our Mission
-          </Link>
+        <div className="mt-12 rounded-3xl border border-blue-100 bg-blue-50 px-6 py-8 text-center sm:px-10">
+          <p className="text-lg font-semibold text-slate-950">
+            Every informed family, trained professional, and supportive voice
+            strengthens the rare disease community.
+          </p>
         </div>
       </div>
     </section>
