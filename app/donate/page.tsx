@@ -9,7 +9,7 @@ import PageHero from "@/components/ui/PageHero";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 export const metadata: Metadata = {
-  title: "Donate | Team Waleed Foundation",
+ title: "Donate",
   description:
     "Support Team Waleed Foundation in raising awareness, improving rare disease support, promoting research, and helping families access reliable information.",
 };
