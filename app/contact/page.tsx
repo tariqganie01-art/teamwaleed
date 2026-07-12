@@ -1,3 +1,11 @@
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Container from "@/components/ui/Container";
@@ -9,22 +17,22 @@ const contactOptions = [
   {
     title: "Families",
     description:
-      "Need guidance, resources or support for a rare disease journey.",
+      "Ask questions, share experiences or suggest resources for families affected by rare diseases.",
   },
   {
     title: "Healthcare Professionals",
     description:
-      "Collaborate in education, awareness and patient care.",
+      "Connect with us for medical education, awareness programmes and clinical collaboration.",
   },
   {
     title: "Researchers",
     description:
-      "Partner with us on research, publications and innovation.",
+      "Discuss publications, research interests, studies and collaboration opportunities.",
   },
   {
-    title: "Volunteers & Partners",
+    title: "Volunteers and Partners",
     description:
-      "Support awareness campaigns, events and foundation activities.",
+      "Support awareness campaigns, events, community activities and foundation partnerships.",
   },
 ];
 
@@ -37,14 +45,14 @@ export default function ContactPage() {
         <PageHero
           eyebrow="Contact Us"
           title="We would love to hear from you."
-          description="Whether you are a family, doctor, researcher, volunteer or organization, Team Waleed Foundation welcomes your message."
+          description="Families, doctors, researchers, educators, volunteers and organizations are welcome to connect with Team Waleed Foundation."
         />
 
         <section className="bg-white py-20">
           <Container>
             <SectionTitle
               eyebrow="Who can contact us"
-              title="Let's work together for every rare life."
+              title="Let us work together for every rare life."
               description="Choose the option that best describes your enquiry."
             />
 
@@ -52,11 +60,11 @@ export default function ContactPage() {
               {contactOptions.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-7"
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-7 transition hover:-translate-y-1 hover:bg-white hover:shadow-xl"
                 >
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h2 className="text-2xl font-bold text-slate-900">
                     {item.title}
-                  </h3>
+                  </h2>
 
                   <p className="mt-4 leading-7 text-slate-600">
                     {item.description}
@@ -70,43 +78,43 @@ export default function ContactPage() {
         <section className="bg-slate-100 py-20">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-
               <div>
-
                 <SectionTitle
-                  eyebrow="Contact Information"
+                  eyebrow="Contact information"
                   title="Reach Team Waleed Foundation"
-                  description="You can call, email, WhatsApp or connect through our social media platforms."
+                  description="Call, email, send a WhatsApp message or connect through our social media platforms."
                   align="left"
                 />
 
-                <div className="mt-8 rounded-3xl bg-blue-900 p-8 text-white">
-
+                <div className="mt-8 rounded-3xl bg-blue-950 p-8 text-white shadow-xl">
                   <h2 className="text-3xl font-bold">
                     Team Waleed Foundation
                   </h2>
 
-                  <p className="mt-3 text-blue-100">
+                  <p className="mt-3 leading-7 text-blue-100">
                     Together for every rare life.
                   </p>
 
                   <div className="mt-8 space-y-6">
-
                     <div>
-                      <p className="text-sm uppercase tracking-wider text-blue-300">
+                      <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">
                         Mobile
                       </p>
 
                       <a
                         href="tel:+919419040309"
-                        className="text-lg font-semibold hover:text-cyan-300"
+                        className="mt-2 flex items-center gap-3 text-lg font-semibold transition hover:text-cyan-300"
                       >
-                        +91 94190 40309
+                        <FaPhoneAlt
+                          className="text-cyan-300"
+                          aria-hidden="true"
+                        />
+                        <span>+91 94190 40309</span>
                       </a>
                     </div>
 
                     <div>
-                      <p className="text-sm uppercase tracking-wider text-blue-300">
+                      <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">
                         WhatsApp
                       </p>
 
@@ -114,143 +122,225 @@ export default function ContactPage() {
                         href="https://wa.me/919419040309"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lg font-semibold hover:text-cyan-300"
+                        className="mt-2 flex items-center gap-3 text-lg font-semibold transition hover:text-cyan-300"
                       >
-                        Chat on WhatsApp
+                        <FaWhatsapp
+                          className="text-2xl text-green-400"
+                          aria-hidden="true"
+                        />
+                        <span>Chat with us</span>
                       </a>
                     </div>
 
                     <div>
-                      <p className="text-sm uppercase tracking-wider text-blue-300">
+                      <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">
                         Email
                       </p>
 
                       <a
                         href="mailto:contact@teamwaleed.org"
-                        className="break-all text-lg font-semibold hover:text-cyan-300"
+                        className="mt-2 flex items-center gap-3 break-all text-lg font-semibold transition hover:text-cyan-300"
                       >
-                        contact@teamwaleed.org
+                        <FaEnvelope
+                          className="shrink-0 text-cyan-300"
+                          aria-hidden="true"
+                        />
+                        <span>contact@teamwaleed.org</span>
                       </a>
                     </div>
-
                   </div>
 
                   <div className="mt-10 border-t border-white/20 pt-6">
-
-                    <p className="text-sm uppercase tracking-wider text-blue-300">
-                      Follow Us
+                    <p className="text-sm font-semibold uppercase tracking-wider text-blue-300">
+                      Follow us
                     </p>
 
-                    <div className="mt-5 flex flex-wrap gap-3">
-
+                    <div className="mt-5 flex flex-wrap gap-4">
                       <a
                         href="https://www.facebook.com/teamwaleed"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full border border-white/20 px-4 py-2 font-semibold hover:bg-white hover:text-blue-900"
+                        aria-label="Team Waleed Foundation on Facebook"
+                        title="Facebook"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-xl text-white transition hover:scale-110 hover:bg-blue-700"
                       >
-                        Facebook
+                        <FaFacebookF aria-hidden="true" />
+                      </a>
+
+                      <a
+                        href="https://wa.me/919419040309"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Contact Team Waleed Foundation on WhatsApp"
+                        title="WhatsApp"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-2xl text-white transition hover:scale-110 hover:bg-green-600"
+                      >
+                        <FaWhatsapp aria-hidden="true" />
                       </a>
 
                       <a
                         href="https://www.youtube.com/@waleed-2019"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full border border-white/20 px-4 py-2 font-semibold hover:bg-white hover:text-blue-900"
+                        aria-label="Team Waleed Foundation on YouTube"
+                        title="YouTube"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-xl text-white transition hover:scale-110 hover:bg-red-700"
                       >
-                        YouTube
+                        <FaYoutube aria-hidden="true" />
                       </a>
 
+                      <a
+                        href="mailto:contact@teamwaleed.org"
+                        aria-label="Email Team Waleed Foundation"
+                        title="Email"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-xl text-white transition hover:scale-110 hover:bg-cyan-700"
+                      >
+                        <FaEnvelope aria-hidden="true" />
+                      </a>
                     </div>
 
-                    <p className="mt-6 text-sm text-blue-200">
-                      Instagram and LinkedIn pages will be available soon.
+                    <p className="mt-6 text-sm leading-6 text-blue-200">
+                      Instagram and LinkedIn profiles will be added when
+                      available.
                     </p>
-
                   </div>
-
                 </div>
-
               </div>
 
-              <div className="rounded-3xl bg-white p-8 shadow">
-
+              <div className="rounded-3xl bg-white p-8 shadow-sm">
                 <h2 className="text-3xl font-bold text-slate-900">
-                  Send us a Message
+                  Send us a message
                 </h2>
 
-                <p className="mt-3 text-slate-600">
-                  Fill in the form below and our team will respond as soon as possible.
+                <p className="mt-4 leading-7 text-slate-600">
+                  Complete the form and include enough detail for us to
+                  understand your request.
                 </p>
 
                 <form className="mt-8 space-y-6">
-
                   <div>
-                    <label className="block font-semibold text-slate-700">
-                      Full Name
+                    <label
+                      htmlFor="fullName"
+                      className="block font-semibold text-slate-700"
+                    >
+                      Full name
                     </label>
 
                     <input
+                      id="fullName"
+                      name="fullName"
                       type="text"
-                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3"
+                      autoComplete="name"
+                      required
+                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-slate-700">
-                      Email Address
+                    <label
+                      htmlFor="email"
+                      className="block font-semibold text-slate-700"
+                    >
+                      Email address
                     </label>
 
                     <input
+                      id="email"
+                      name="email"
                       type="email"
-                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3"
+                      autoComplete="email"
+                      required
+                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-slate-700">
-                      Mobile Number
+                    <label
+                      htmlFor="mobile"
+                      className="block font-semibold text-slate-700"
+                    >
+                      Mobile number
                     </label>
 
                     <input
+                      id="mobile"
+                      name="mobile"
                       type="tel"
-                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3"
+                      autoComplete="tel"
+                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-slate-700">
+                    <label
+                      htmlFor="enquiryType"
+                      className="block font-semibold text-slate-700"
+                    >
+                      Enquiry type
+                    </label>
+
+                    <select
+                      id="enquiryType"
+                      name="enquiryType"
+                      defaultValue="General enquiry"
+                      className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                    >
+                      <option>General enquiry</option>
+                      <option>Family support</option>
+                      <option>Healthcare professional</option>
+                      <option>Research collaboration</option>
+                      <option>Volunteer</option>
+                      <option>Partnership</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="subject"
+                      className="block font-semibold text-slate-700"
+                    >
                       Subject
                     </label>
 
                     <input
+                      id="subject"
+                      name="subject"
                       type="text"
-                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3"
+                      required
+                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     />
                   </div>
 
                   <div>
-                    <label className="block font-semibold text-slate-700">
+                    <label
+                      htmlFor="message"
+                      className="block font-semibold text-slate-700"
+                    >
                       Message
                     </label>
 
                     <textarea
+                      id="message"
+                      name="message"
                       rows={6}
-                      className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3"
+                      required
+                      className="mt-2 w-full resize-y rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="rounded-full bg-blue-700 px-8 py-3 font-semibold text-white transition hover:bg-blue-800"
+                    className="rounded-full bg-blue-700 px-8 py-3.5 font-semibold text-white transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-200"
                   >
-                    Send Message
+                    Send message
                   </button>
 
+                  <p className="text-sm leading-6 text-slate-500">
+                    The form design is complete. Email delivery still needs to
+                    be connected before submitted messages can be received.
+                  </p>
                 </form>
-
               </div>
-
             </div>
           </Container>
         </section>
