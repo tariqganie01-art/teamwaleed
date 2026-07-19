@@ -30,30 +30,33 @@ export default function Header() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex items-center gap-3"
+          className="flex min-w-0 items-center gap-3"
           aria-label="Team Waleed Foundation home"
         >
           <Image
-            src="/images/teamwaleed-logo.png"
+            src="/team-waleed-logo.png"
             alt="Team Waleed Foundation logo"
-            width={52}
-            height={52}
+            width={64}
+            height={64}
             priority
-            className="h-12 w-12 object-contain"
+            className="h-14 w-14 shrink-0 object-contain"
           />
 
-          <div>
-            <p className="text-lg font-bold leading-tight text-slate-950">
+          <div className="min-w-0">
+            <p className="truncate text-lg font-bold leading-tight text-slate-950 sm:text-xl">
               Team Waleed
             </p>
 
-            <p className="text-xs font-medium text-blue-700">
+            <p className="truncate text-xs font-medium text-blue-700 sm:text-sm">
               Together for every rare life
             </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:flex">
+        <nav
+          className="hidden items-center gap-1 lg:flex"
+          aria-label="Main navigation"
+        >
           {navigation.map((item) => {
             const active =
               item.href === "/"
@@ -86,9 +89,12 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen((current) => !current)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-800 transition hover:bg-slate-100 xl:hidden"
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-800 transition hover:bg-slate-100 lg:hidden"
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           {menuOpen ? (
             <svg
@@ -117,8 +123,14 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-slate-200 bg-white xl:hidden">
-          <nav className="mx-auto max-w-7xl px-5 py-5 sm:px-8 lg:px-10">
+        <div
+          id="mobile-navigation"
+          className="border-t border-slate-200 bg-white lg:hidden"
+        >
+          <nav
+            className="mx-auto max-w-7xl px-5 py-5 sm:px-8 lg:px-10"
+            aria-label="Mobile navigation"
+          >
             <div className="grid gap-2">
               {navigation.map((item) => {
                 const active =
